@@ -1,0 +1,129 @@
+
+*{
+    font-family: 'Merriweather', serif;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Playpen Sans', cursive;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    animation: colorchange 25s infinite linear;
+    transition: 25s linear;
+}
+.color{
+    animation: colorchange 25s infinite linear;
+}
+
+@keyframes colorchange {
+    0%{background-image:linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);}
+    25%{background-image:linear-gradient(-60deg, #ff5858 0%, #f09819 100%);}
+    50%{background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);}
+    75%{ background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);}
+    100%{background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);}
+    
+}
+.vi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vi video{
+    width: 300px;
+    height: 380px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.vi video:hover{
+    transform: scale(110%);
+    transform: filter(shadow(100%));
+    
+}
+
+a{
+  text-decoration: none;
+  /* width: 100%; */
+}
+
+.bounce{
+    animation: bounce 4s infinite ease-in-out;
+    transition: 5s;
+}
+
+@keyframes bounce {
+    50%{transform: scale(40%)}
+    100%{transform: scale(100%);}
+    
+}
+
+.ph{
+    background-image: url('/static/images/me.jpg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 25px;
+    border: 2px solid black;
+    width: 200px;
+    height: 245px;
+    object-fit: cover;
+    animation: trans2 6s linear infinite ;
+    animation-delay: 2s;
+    transition: 6s;
+}
+
+@keyframes trans2 {
+    from{background-image: url('/static/images/me.jpg ' );}
+    to{background-image: url(' /static/images/4.jpg ' );}
+}
+
+.ph1{
+    background-image: url('/static/images/4.jpg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 25px;
+    border: 2px solid black;
+    width: 200px;
+    height: 245px;
+    object-fit: cover;
+    animation: trans1 6s ease infinite ;
+    animation-delay: 2s;
+    transition: 6s;
+}
+
+@keyframes trans1 {
+    from{background-image: url('/static/images/4.jpg ' );}
+    to{background-image: url(' /static/images/me.jpg ' );}
+}
+
+.mainanimation{
+    background-image: url('/static/images/m2.png' );
+    background-repeat: no-repeat transparent;
+    background-position: center;
+    background-size: 100% 100%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 120px;
+    width: 407px;
+    height: 616px;
+    object-fit: cover;
+    transition: 0.5s; 
+}
+
+.rotate{
+ animation: rot 20s linear infinite;
+ transition: 5s linear;
+}
+
+@keyframes rot {
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
+    
+}
+
+.mtext{
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #eb2741;
+    text-shadow: 3px 3px 3px white ;
+}

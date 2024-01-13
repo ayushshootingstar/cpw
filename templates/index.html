@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Pacifico&family=Playpen+Sans&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>Shooting Star</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body><div class="hj">
+    <div class="dairy">
+        <div><h1>내 귀염둥이 파이</h1></div><div class="heart"><img id="one" src="{% static "images/2.png" %}" alt=""><img id="two" src="{% static "images/1.png" %}" alt=""></div>
+    </div>
+    <div class="section">
+    <div class="img-hanger">
+        <img src=" {% static "images/6.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/7.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/5.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/4.1.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/1.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/3.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/8.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/2.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/9.jpg" %}" alt="">
+    </div>
+    <div class="img-hanger">
+        <img src=" {% static "images/6.jpg" %}" alt="">
+    </div>
+
+    {% for n in img %}
+    <div class="img-hanger">
+        <small class="fonts fw-700 text-wrap ">{{n.date}}</small>
+        <img src="{{n.image.url}}" alt="">
+        <div class="container fs-4 p-1 text-center text-wrap" style="background-color: aliceblue;">
+            <h5 class="fw-bold  mh" style="color: crimson;" >{{n.caption}}</h5>
+        </div>    
+    </div>
+    {% endfor %}
+   
+    <button type="button" onclick="show()" class="btn btn-success fixed-bottom mb-2 ms-5 d-flex justify-content-center  fw-bolder fs-5 col-2">❣️</button>
+    <div class="pt" style="display:none; position:sticky">
+      <div class="d-flex justify-content-center pb-4 col-12">
+        
+
+        <div class="row fixed-bottom mb-2 col-12 d-flex justify-content-center mb-4 p-4">
+
+            <div class="d-flex justify-content-end">
+                <button type="button" onclick="show1()" class="btn btn-danger ">Close</button>
+            </div>
+           
+            <div class="row text-center">
+                <h1 class="fw-bold fs-6">upload Image</h1>
+            </div>
+
+
+            <div class="mb-3">
+
+                <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+            </div>
+
+            <button type="submit"  class="btn btn-primary fw-bold">Upload</button>
+            <!-- <hr>
+            {% if obj %}
+            <h3>Succesfully uploaded</h3>
+            {% endif %} -->
+
+
+<!-- 
+         {% for x in img %}
+            {% if forloop.first %}<div class="row ">{% endif %}
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="text-center mt-2">
+                        <img src="{{x.image.url}}" height="70%" width="70%" class="img-thumbnail" alt="...">
+                        <h2 class="text-center">{{x.caption}}</h2>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class=row>
+            {% endif %}
+            </div>
+        </div>
+
+        {% if forloop.last %}</div>{% endif %}
+
+{% endfor %} -->
+
+
+        <div class="container my-5">
+
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+   </div>
+   
+</div>
+
+<script src="{% static 'js/script.js' %}">
+    
+</script>
+</body>
+</html>
